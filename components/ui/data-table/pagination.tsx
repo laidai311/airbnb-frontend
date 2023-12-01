@@ -3,7 +3,7 @@ import { Table } from "@tanstack/react-table"
 import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { PAGE_SIZE_OPTIONS } from "@/constants/data-table"
+import { PAGE_SIZE_OPTIONS } from "@/lib/constants"
 
 interface DataTablePaginationProps<TData> {
   table: Table<TData>
