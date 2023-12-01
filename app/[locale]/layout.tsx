@@ -4,15 +4,15 @@ import { Inter as FontSans } from "next/font/google"
 import { notFound } from "next/navigation"
 import { NextIntlClientProvider } from "next-intl"
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
-import FancyboxProvider from "@/components/fancybox-provider"
-import { NextAuthProvider } from "@/components/next-auth-provider"
-import { NProgressBarProvider } from "@/components/nprogress-bar-provider"
+import { FancyboxProvider } from "@/app/providers/fancybox-provider"
+import { NextAuthProvider } from "@/app/providers/next-auth-provider"
+import { NProgressBarProvider } from "@/app/providers/next-nprogress-bar-provider"
+import { NextThemeProvider } from "@/app/providers/next-theme-provider"
+import { ReactQueryProvider } from "@/app/providers/react-query-provider"
+import { ReactHotToastProvider } from "@/app/providers/toast-provider"
+import { WindowSizeProvider } from "@/app/providers/window-size-provider"
 import { PageHeader } from "@/components/page-header"
-import { ReactQueryProvider } from "@/components/query-client-provider"
-import { NextThemeProvider } from "@/components/theme-provider"
-import { ReactHotToastProvider } from "@/components/toast-provider"
 import { Toaster } from "@/components/ui/toaster"
-import { WindowSizeProvider } from "@/components/window-size.provider"
 import { locales } from "@/lib/config"
 import { cn } from "@/lib/utils"
 
@@ -29,11 +29,6 @@ interface Props {
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
-
-// export const metadata: Metadata = {
-//   title: "Home",
-//   description: "Welcome to Next.js",
-// }
 
 export async function generateMetadata({ params: { locale } }: Omit<Props, "children">) {
   const t = await getTranslations({ locale, namespace: "LocaleLayout" })

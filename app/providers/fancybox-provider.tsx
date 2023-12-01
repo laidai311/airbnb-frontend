@@ -10,7 +10,7 @@ interface Props {
   options?: Partial<FancyboxOptionsType>
 }
 
-export default function FancyboxProvider({ delegate = "[data-fancybox]", options = {}, children }: Props) {
+export function FancyboxProvider({ delegate = "[data-fancybox]", options = {}, children }: Props) {
   const containerRef = useRef(null)
 
   useEffect(() => {
