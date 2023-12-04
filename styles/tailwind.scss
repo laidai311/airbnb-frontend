@@ -100,3 +100,30 @@
     }
   }
 }
+
+@layer base {
+  html {
+    font-family: "Circular", system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  .mySwiper .swiper-button-next,
+  .mySwiper .swiper-button-prev{
+    @apply bg-white w-8 h-8 rounded-full flex justify-center items-center
+  }
+
+  .mySwiper .swiper-button-next::after,
+  .mySwiper .swiper-button-prev::after{
+    @apply text-black text-xs
+  }
+
+  
+  .mySwiper .swiper-pagination-bullet{
+    @apply bg-blue-50
+  }
+
+  .mySwiper .swiper-pagination-bullet-active{
+    @apply bg-white
+  }
+}
