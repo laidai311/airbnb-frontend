@@ -16,7 +16,7 @@ import { Star } from 'lucide-react'
 
 const HomeCard = () => {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-y-3 gap-x-3 ml-5 mr-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-y-3 gap-x-3 mx-5">
             <Card className="border-none shadow-none">
                 <a href="">
                     <div className="relative z-10">
